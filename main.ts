@@ -286,7 +286,7 @@ namespace microbiti2cesp32 {
     //% blockId=google block="Send to Google form"
     //% weight=30
     export function google():void {
-        sendi2cmessage("googler=") 
+        sendi2cmessage("google=") 
 	basic.pause(200)
     }
 	
@@ -296,7 +296,7 @@ namespace microbiti2cesp32 {
     export function googler(googleid: string, googlerow: string, googlecol: number):string {
         let a=receivei2cmessage2("googler="+googleid+","+googlerow+","+convertToText(googlecol)).substr(1)
 	basic.pause(2000)
-   	while (!a.includes("googler"))
+   	if (!a.includes("googler"))
 	{
            a=receivei2cmessage2("googler=").substr(1)
 	}
